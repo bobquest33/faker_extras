@@ -49,3 +49,7 @@ def test_hair_style():
 
 def test_handedness():
     assert isinstance(fake.handedness(), str)
+
+
+def test_face_shape():
+    assert isinstance(fake.face_shape(), str)

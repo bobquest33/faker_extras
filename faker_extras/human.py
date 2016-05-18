@@ -678,3 +678,17 @@ class HumanProvider(BaseProvider):
     def handedness(self):
         """Return a random handedness."""
         return choice(['left', 'right', 'ambidextrous'])
+
+    def face_shape(self):
+        """Return a random face shape using a standard 9 common types."""
+        return choice([
+            'kite',
+            'heart',
+            'rectangle',
+            'oval',
+            'round',
+            'square',
+            'teardrop',
+            'heptagon',
+            'oblong',
+        ])
