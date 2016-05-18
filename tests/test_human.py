@@ -45,3 +45,7 @@ def test_shirt_size():
 
 def test_hair_style():
     assert isinstance(fake.hair_style(), str)
+
+
+def test_handedness():
+    assert isinstance(fake.handedness(), str)

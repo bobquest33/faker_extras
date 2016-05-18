@@ -674,3 +674,7 @@ class HumanProvider(BaseProvider):
             'Waves',
             'Wings',
         ])
+
+    def handedness(self):
+        """Return a random handedness."""
+        return choice(['left', 'right', 'ambidextrous'])
