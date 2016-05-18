@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/christabor/faker_extras.svg?branch=master)](https://travis-ci.org/christabor/faker_extras)
+
 # faker_extras
 Extra data providers for the [Python Faker library.](https://github.com/joke2k/faker/)
 
