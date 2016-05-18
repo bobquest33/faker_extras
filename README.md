@@ -1,5 +1,5 @@
 # faker_extras
-Extra data providers for the Python Faker library.
+Extra data providers for the [Python Faker library.](https://github.com/joke2k/faker/)
 
 ## Current providers
 
