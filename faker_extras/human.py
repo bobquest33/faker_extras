@@ -1,8 +1,9 @@
 """Faker data providers for binary data."""
 
+from __future__ import absolute_import
+
 from random import choice
 
-from faker import Faker
 from faker.providers import BaseProvider
 
 
@@ -673,18 +674,3 @@ class HumanProvider(BaseProvider):
             'Waves',
             'Wings',
         ])
-
-
-if __name__ == '__main__':
-    fake = Faker()
-    fake.add_provider(HumanProvider)
-    print(fake.pos_attribute())
-    print(fake.neg_attribute())
-    print(fake.mood())
-    print(fake.gender())
-    print(fake.religion())
-    print(fake.race())
-    print(fake.eye_color())
-    print(fake.hair_color())
-    print(fake.shirt_size())
-    print(fake.hair_style())

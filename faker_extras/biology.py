@@ -1,13 +1,62 @@
 """Faker data providers for biological data."""
 
-from faker import Faker
+from __future__ import absolute_import
+
+from random import choice
+
 from faker.providers import BaseProvider
 
-import utils
+from . import utils
 
 
 class GeneticProvider(BaseProvider):
-    """Genomic data provider."""
+    """Genomic data provider.
+
+    Acid data source:
+    http://www.cryst.bbk.ac.uk/education/AminoAcid/the_twenty.html
+    """
+
+    acids = {
+        'alanine': 'ala',
+        'arginine': 'arg',
+        'asparagine': 'asn',
+        'aspartic acid': 'asp',
+        'cysteine': 'cys',
+        'glutamine': 'gln',
+        'glutamic acid': 'glu',
+        'glycine': 'gly',
+        'histidine': 'his',
+        'isoleucine': 'ile',
+        'leucine': 'leu',
+        'lysine': 'lys',
+        'methionine': 'met',
+        'phenylalanine': 'phe',
+        'proline': 'pro',
+        'serine': 'ser',
+        'threonine': 'thr',
+        'tryptophan': 'trp',
+        'tyrosine': 'tyr',
+        'valine': 'val',
+    }
+
+    def amino_acid_group(self):
+        """Return an amino acid group."""
+        return choice([
+            'Aliphatic',
+            'Aromatic',
+            'Acidic',
+            'Basic',
+            'Hydroxylic',
+            'Sulphur-containing',
+            'Amidic',
+        ])
+
+    def amino_acid(self, symbol=True):
+        """Return a random amino symbol or acid."""
+        if symbol:
+            vals = self.acids.keys()
+            return choice(vals)
+        return choice(self.acids.keys())
 
     def rna(self):
         """Return some RNA sequence.
@@ -24,10 +73,3 @@ class GeneticProvider(BaseProvider):
         >>> CTATAGAGCT
         """
         return utils._choice_str(['T', 'C', 'G', 'A'], 10)
-
-
-if __name__ == '__main__':
-    fake = Faker()
-    fake.add_provider(GeneticProvider)
-    print(fake.rna())
-    print(fake.dna())

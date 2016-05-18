@@ -1,8 +1,9 @@
 """Faker data providers for chemistry data."""
 
+from __future__ import absolute_import
+
 from random import choice, randrange
 
-from faker import Faker
 from faker.providers import BaseProvider
 
 
@@ -176,13 +177,3 @@ class ChemistryProvider(BaseProvider):
         """Return a random element atomic number."""
         # There are 118 of them.
         return randrange(1, 119)
-
-
-if __name__ == '__main__':
-    fake = Faker()
-    fake.add_provider(ChemistryProvider)
-    print(fake.family())
-    print(fake.period())
-    print(fake.symbol())
-    print(fake.element())
-    print(fake.atomic_number())
