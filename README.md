@@ -20,11 +20,16 @@ Biological encodings, such as RNA and DNA.
 ## Usage
 Install using pip or setuptools: `python setup.py install`
 
+Add the appropriate provider:
+
 ```python
+from faker import Faker
 from faker_extras.biology import GeneticProvider
 
-gen = GeneticProvider()
-gen.dna()
+fake = Faker()
+fake.add_provider(GeneticProvider)
+
+fake.dna()
 ```
 
 ## Tests
