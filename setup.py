@@ -7,7 +7,7 @@ except ImportError:
     use_setuptools()
 
 PACKAGE = 'faker_extras'
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 
 keywords = ['faker_extras', 'fake data generation', 'faker', 'data generator']
 description = ('An extended set of data providers for the Faker library.')
