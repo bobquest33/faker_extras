@@ -2,4 +2,12 @@ sudo: false
 python:
   - "2.7"
 language: python
-script: nosetests
+script: python -m pytest tests
+install:
+  - pip install -U coveralls
+  - pip install -U tox
+  - pip install -U pytest
+  - pip install -U pytest-cov
+  - pip install -e .
+after_success:
+  coveralls

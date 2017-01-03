@@ -34,4 +34,4 @@ fake.dna()
 
 ## Tests
 
-Run ```nosetests```
+Run ```python -m pytest tests``` or `tox`

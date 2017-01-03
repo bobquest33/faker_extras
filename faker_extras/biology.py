@@ -1,7 +1,5 @@
 """Faker data providers for biological data."""
 
-from __future__ import absolute_import
-
 from random import choice
 
 from faker.providers import BaseProvider

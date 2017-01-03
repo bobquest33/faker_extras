@@ -1,21 +1,13 @@
 """Installation setup."""
 
-import os
-
 try:
-    from setuptools import setup, find_packages
+    from setuptools import setup
 except ImportError:
     from ez_setup import use_setuptools
     use_setuptools()
 
 PACKAGE = 'faker_extras'
-VERSION = '1.0.0'
-
-
-def _get_requires(filepath):
-    path = '{}/{}'.format(os.path.abspath(os.path.dirname(__file__)), filepath)
-    with open(path) as reqs:
-        return [req for req in reqs.read().split('\n') if req]
+VERSION = '1.0.1'
 
 keywords = ['faker_extras', 'fake data generation', 'faker', 'data generator']
 description = ('An extended set of data providers for the Faker library.')
@@ -30,13 +22,17 @@ setup(
     url='https://github.com/christabor/faker_extras',
     keywords=keywords,
     license='Apache License 2.0',
-    packages=find_packages(exclude=["tests", "tests.*"]),
-    install_requires=_get_requires('requirements.txt'),
+    package_dir={'faker_extras': 'faker_extras'},
+    packages=['faker_extras'],
+    zip_safe=False,
+    install_requires=[
+        'Faker',
+    ],
     setup_requires=[
         'setuptools>=0.8',
     ],
     tests_require=[
-        'nose',
+        'pytest',
     ],
     test_suite='tests',
     classifiers=[
